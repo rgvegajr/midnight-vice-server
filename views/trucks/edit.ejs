@@ -6,20 +6,35 @@
   
             <form action="/trucks/<%= truck._id %>?_method=PUT" method="POST">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="truck[name]" value="<%= truck.name %>">
+                    <input class="form-control" type="text" name="name" placeholder="Truck name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="truck[image]" value="<%= truck.image %>">
+                    <input class="form-control" type="text" name="foodCategory" placeholder="Food category - Latin, American, Italian, Asian, Other">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="truck[description]" value="<%= truck.description %>">
+                    <input class="form-control" type="text" name="address" placeholder="Address">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="truck[owner]" value="<%= truck.owner %>">
+                    <label for="hours">Hours</label>
+                    <input class="form-control" type="text" name="hours.Mon" placeholder="Monday">
+                    <input class="form-control" type="text" name="hours.Tue" placeholder="Tuesday">
+                    <input class="form-control" type="text" name="hours.Wed" placeholder="Wednesday">
+                    <input class="form-control" type="text" name="hours.Thu" placeholder="Thursday">
+                    <input class="form-control" type="text" name="hours.Fri" placeholder="Friday">
+                    <input class="form-control" type="text" name="hours.Sat" placeholder="Saturday">
+                    <input class="form-control" type="text" name="hours.Sun" placeholder="Sunday">
                 </div>
                 <div class="form-group">
-                    <label for="location">Location</label>
-                    <input class="form-control" type="text" name="location" id="location" value="<%= truck.location %>">
+                    <input class="form-control" type="text" name="website" placeholder="Website">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="truck image URL">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="currentLocation" placeholder="currentLocation">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="owner" placeholder="owner">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button>

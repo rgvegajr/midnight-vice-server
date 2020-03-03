@@ -2,17 +2,28 @@ const mongoose = require("mongoose");
 
 const truckSchema = new mongoose.Schema({
    name: String,
+   foodCategory: String,
+   address: String,
+   hours: {
+      Mon: String,
+      Tue: String,
+      Wed: String,
+      Thu: String,
+      Fri: String,
+      Sat: String,
+      Sun: String
+   },
+   website: String,
    image: String,
-   description: String,
-   location: String,
-   lat: Number,
-   lng: Number,
+   currentLocation: String,
+   // lat: Number,
+   // lng: Number,
    owner: {
       id: {
          type: mongoose.Schema.Types.ObjectId,
          ref: "User"
       },
-      username: String
+      username: String,
    }// add below for comments
    // },
    // comments: [

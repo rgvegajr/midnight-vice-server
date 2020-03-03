@@ -29,14 +29,18 @@ router.get("/", function(req, res){
 //CREATE - add new truck to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
   // get data from form and add to campgrounds array
-  var name = req.body.name;
-  var image = req.body.image;
-  var desc = req.body.description;
-  var owner = {
+  let name = req.body.name;
+  let foodCategory = req.body.foodCategory;
+  let address = req.body.address;
+  let hours = req.body.hours;
+  let website = req.body.website;
+  let image = req.body.image;
+  let currentLocation = req.body.currentLocation;
+  let owner = {
       id: req.user._id,
       username: req.user.username
   };
-  let location = req.body.location;
+
 //   geocoder.geocode(req.body.location, function (err, data) {
 //     if (err || !data.length) {
 //       req.flash('error', 'Invalid address');
@@ -58,7 +62,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 //         }
 //     });
 //   });
-  var newTruck = {name: name, image: image, description: desc, owner:owner, location: location};
+  let newTruck = {name: name, foodCategory: foodCategory, address: address, hours: hours, website: website, image: image, currentLocation: currentLocation, owner: owner};
   // Create a new campground and save to DB
   Truck.create(newTruck, function(err, newlyCreated){
       if(err){
