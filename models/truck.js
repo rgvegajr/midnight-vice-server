@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const truckSchema = new mongoose.Schema({
    name: String,
-   foodCategory: String,
    address: String,
    hours: {
       Mon: String,
@@ -13,25 +12,17 @@ const truckSchema = new mongoose.Schema({
       Sat: String,
       Sun: String
    },
+   phoneNumber: String,
    website: String,
    image: String,
    currentLocation: String,
-   // lat: Number,
-   // lng: Number,
    owner: {
       id: {
          type: mongoose.Schema.Types.ObjectId,
          ref: "User"
       },
-      username: String,
-   }// add below for comments
-   // },
-   // comments: [
-   //    {
-   //       type: mongoose.Schema.Types.ObjectId,
-   //       ref: "Comment"
-   //    }
-   // ]
+   username: String,
+   }
 });
 
 module.exports = mongoose.model("Truck", truckSchema);
