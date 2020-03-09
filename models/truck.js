@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 const truckSchema = new mongoose.Schema({
+   truck_id: Number,
    name: String,
    address: String,
+   zipcode: Number,
    hours: {
       Mon: String,
       Tue: String,
@@ -12,9 +14,10 @@ const truckSchema = new mongoose.Schema({
       Sat: String,
       Sun: String
    },
-   phoneNumber: String,
-   website: String,
-   image: String,
+   phone_number: String,
+   email_address: String,
+   website_url: String,
+   image_url: String,
    currentLocation: String,
    owner: {
       id: {
@@ -26,3 +29,4 @@ const truckSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Truck", truckSchema);
+
